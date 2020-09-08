@@ -1,0 +1,257 @@
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojResolveAssemblyReference.cache
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.App.xaml.g.cs
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MainPage.xaml.g.cs
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.ListPage.xaml.g.cs
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.pageView.xaml.g.cs
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\alexsander.saraujo\source\repos\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.App.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MainPage.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.teste.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.ListPage.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.pageView.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.App.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MainPage.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Menu.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MenuDetail.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MenuMaster.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.teste.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.ListPage.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.pageView.xaml.g.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Automação\Desktop\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.TabbedAvaliação.Avaliação.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.App.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.InserirAvaliacao.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MainPage.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Menu.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MenuDetail.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.MenuMaster.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.TabbedAvaliação.Avaliação.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.TelaLogin.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.teste.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.ListPage.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.pageView.xaml.g.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojResolveAssemblyReference.cache
+C:\Users\renato.malmeida\Documents\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.Views.EscolhaDePerfil.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\InserirAvaliacao.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\Menu.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Avaliação.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Professor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Turma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLogin.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\teste.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\CadastroProfessorPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\EscolhaDePerfil.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\IncluirTurmasProf.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ListPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\pageView.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\XamlC.stamp
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\InserirAvaliacao.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\Menu.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Avaliação.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Professor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Turma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLogin.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\teste.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\CadastroProfessorPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\EscolhaDePerfil.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\IncluirTurmasProf.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ListPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\pageView.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\XamlC.stamp
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\InserirAvaliacao.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\Menu.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Avaliação.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Professor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Turma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLogin.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\teste.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\CadastroProfessorPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ConsultaTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\EscolhaDePerfil.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\IncluirTurmasProf.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ListPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\pageView.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\XamlC.stamp
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\ConsultarMedia.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\ListarMedia.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\NovoLoginAluno.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\TelaLoginAluno.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\ListPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\MainPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\pageView.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\InserirAvaliacao.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupErro.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupLembretes.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupSucesso.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopUpAluno.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopupInserirAlunos.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\Menu.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuDetail.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuMaster.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\SelecionarPerfil.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Aluno.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Avaliação.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Notas.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Professor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Turma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLogin.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLoginProfessor.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\testchamada.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\teste.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\CadastroProfessorPage.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ConsultarCadastroAlunos.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ConsultaTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\IncluirTurmasProf.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirAlunos.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirChamada.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirNotas.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirTurma.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ListarAvaliacoes.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\NovoLogin.xaml.g.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\XamlC.stamp
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.deps.json
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\bin\Debug\netstandard2.0\AppBanco.pdb
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csprojAssemblyReference.cache
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\ConsultarMedia.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\ListarMedia.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\NovoLoginAluno.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AlunoMenu\TelaLoginAluno.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\ListPage.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\MainPage.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Anotacoes\pageView.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\InserirAvaliacao.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessor.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorDetail.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\MenuProfesor\MenuProfessorMaster.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupErro.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupLembretes.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopPupSucesso.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopUpAluno.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\PopUpBonitao\PopupInserirAlunos.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\Menu.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuDetail.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Secretaria\MenuMaster.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\SelecionarPerfil.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Aluno.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Avaliação.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Notas.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Professor.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TabbedMenusResponsivo\Turma.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLogin.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\TelaLoginProfessor.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\testchamada.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\teste.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\CadastroProfessorPage.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ConsultarCadastroAlunos.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ConsultaTurma.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\IncluirTurmasProf.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirAlunos.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirChamada.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirNotas.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\InserirTurma.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\ListarAvaliacoes.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\Views\NovoLogin.xaml.g.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.csproj.CoreCompileInputs.cache
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfoInputs.cache
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.AssemblyInfo.cs
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.dll
+C:\Users\Scarlxrd2112\Documents\PROJETOS\PROJETO SKYP\PROJETO SKYP DESENVOLVIMENTO\Aplicação Mobile Multi-Plataforma\AppBanco\AppBanco\AppBanco\obj\Debug\netstandard2.0\AppBanco.pdb
