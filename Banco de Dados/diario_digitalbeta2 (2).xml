@@ -1,0 +1,2563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.3
+- https://www.phpmyadmin.net
+-
+- Host: localhost
+- Tempo de geração: 01/12/2018 às 05:29
+- Versão do servidor: 5.7.22
+- Versão do PHP: 7.0.32
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="diario_digitalbeta2" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="aluno">
+                CREATE TABLE `aluno` (
+                  `Id_Aluno` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `RA` varchar(30) DEFAULT NULL,
+                  `Nome` varchar(40) DEFAULT NULL,
+                  `Data_Nascimento` date DEFAULT NULL,
+                  PRIMARY KEY (`Id_Aluno`),
+                  KEY `fk_Id_TurmaAlunoA` (`Id_Turma`),
+                  CONSTRAINT `fk_Id_TurmaAlunoA` FOREIGN KEY (`Id_Turma`) REFERENCES `turma` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=498 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="avaliacao">
+                CREATE TABLE `avaliacao` (
+                  `Id_Avaliacao` smallint(10) NOT NULL AUTO_INCREMENT,
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Bimestre` smallint(6) DEFAULT NULL,
+                  `Id_Turma` int(6) DEFAULT NULL,
+                  `Serie` varchar(20) DEFAULT NULL,
+                  `Titulo` varchar(50) DEFAULT NULL,
+                  `Bimestre` varchar(20) DEFAULT NULL,
+                  `Descricao` varchar(60) DEFAULT NULL,
+                  `Data_Avaliacao` date DEFAULT NULL,
+                  PRIMARY KEY (`Id_Avaliacao`),
+                  KEY `fk_Id_ProfessorAvaliacao` (`Id_Professor`),
+                  KEY `fk_ID_BimestreAvaliacao` (`Id_Bimestre`),
+                  KEY `Id_Turma` (`Id_Turma`),
+                  CONSTRAINT `fk_ID_BimestreAvaliacao` FOREIGN KEY (`Id_Bimestre`) REFERENCES `bimestre` (`Id_Bimestre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorAvaliacao` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="bimestre">
+                CREATE TABLE `bimestre` (
+                  `Id_Bimestre` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Bimestre` varchar(20) DEFAULT NULL,
+                  PRIMARY KEY (`Id_Bimestre`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="chamada">
+                CREATE TABLE `chamada` (
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Id_Aluno` smallint(6) DEFAULT NULL,
+                  `Numero_Chamada` smallint(3) DEFAULT NULL,
+                  `Nome` varchar(40) DEFAULT NULL,
+                  KEY `fk_Id_Turma_TurmaAluno` (`Id_Turma`),
+                  CONSTRAINT `fk_Id_Turma_TurmaAluno` FOREIGN KEY (`Id_Turma`) REFERENCES `turma` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="conteudo_programatico">
+                CREATE TABLE `conteudo_programatico` (
+                  `Id_conteudoProgramatico` smallint(10) NOT NULL AUTO_INCREMENT,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Bimestre` smallint(6) DEFAULT NULL,
+                  `Conteudo_Programatico` varchar(600) DEFAULT NULL,
+                  `Data_Conteudo` date DEFAULT NULL,
+                  PRIMARY KEY (`Id_conteudoProgramatico`),
+                  KEY `fk_Id_TurmaconteudoProgramatico` (`Id_Turma`),
+                  KEY `fk_Id_BimestreconteudoProgramatico` (`Id_Bimestre`),
+                  KEY `fk_Id_ProfessorConteudo_Programatico` (`Id_Professor`),
+                  CONSTRAINT `fk_Id_BimestreconteudoProgramatico` FOREIGN KEY (`Id_Bimestre`) REFERENCES `bimestre` (`Id_Bimestre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorConteudo_Programatico` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorconteudoProgramatico` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_TurmaconteudoProgramatico` FOREIGN KEY (`Id_Turma`) REFERENCES `turma_professor` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="frequencia">
+                CREATE TABLE `frequencia` (
+                  `Id_Aluno` smallint(6) DEFAULT NULL,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Bimestre` smallint(6) DEFAULT NULL,
+                  `Falta` char(1) DEFAULT NULL,
+                  `Data` date DEFAULT NULL,
+                  KEY `fk_Id_Turma` (`Id_Turma`),
+                  KEY `fk_Id_ProfessorFrequencia` (`Id_Professor`),
+                  KEY `fk_Id_BimestreFrequencia` (`Id_Bimestre`),
+                  KEY `fk_Id_AlunoFrequencia` (`Id_Aluno`),
+                  CONSTRAINT `fk_Id_AlunoFrequencia` FOREIGN KEY (`Id_Aluno`) REFERENCES `aluno` (`Id_Aluno`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_BimestreFrequencia` FOREIGN KEY (`Id_Bimestre`) REFERENCES `bimestre` (`Id_Bimestre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorFrequencia` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_Turma` FOREIGN KEY (`Id_Turma`) REFERENCES `turma` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="media_final">
+                CREATE TABLE `media_final` (
+                  `Id_Media` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Id_Aluno` smallint(6) DEFAULT NULL,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Bimestre` smallint(6) DEFAULT NULL,
+                  `Falta_Total` smallint(4) DEFAULT NULL,
+                  `Media` decimal(10,2) DEFAULT NULL,
+                  PRIMARY KEY (`Id_Media`),
+                  KEY `fk_Id_AlunoMedia` (`Id_Aluno`),
+                  KEY `fk_Id_TurmaMedia` (`Id_Turma`),
+                  KEY `fk_Id_ProfessorMedia` (`Id_Professor`),
+                  KEY `fk_Id_BimestreMedia` (`Id_Bimestre`),
+                  CONSTRAINT `fk_Id_AlunoMedia` FOREIGN KEY (`Id_Aluno`) REFERENCES `aluno` (`Id_Aluno`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_BimestreMedia` FOREIGN KEY (`Id_Bimestre`) REFERENCES `bimestre` (`Id_Bimestre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorMedia` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_TurmaMedia` FOREIGN KEY (`Id_Turma`) REFERENCES `turma` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="nota">
+                CREATE TABLE `nota` (
+                  `Id_Aluno` smallint(6) DEFAULT NULL,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Avaliacao` smallint(10) DEFAULT NULL,
+                  `Id_Bimestre` smallint(6) DEFAULT NULL,
+                  `Nota` decimal(10,2) NOT NULL,
+                  KEY `fk_Id_AlunoNota` (`Id_Aluno`),
+                  KEY `fk_Id_TurmaNota` (`Id_Turma`),
+                  KEY `fk_Id_ProfessorNota` (`Id_Professor`),
+                  KEY `fk_Id_BimestreNota` (`Id_Bimestre`),
+                  KEY `fk_AvaliacaoNota` (`Id_Avaliacao`),
+                  CONSTRAINT `fk_AvaliacaoNota` FOREIGN KEY (`Id_Avaliacao`) REFERENCES `avaliacao` (`Id_Avaliacao`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_AlunoNota` FOREIGN KEY (`Id_Aluno`) REFERENCES `aluno` (`Id_Aluno`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_BimestreNota` FOREIGN KEY (`Id_Bimestre`) REFERENCES `bimestre` (`Id_Bimestre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_ProfessorNota` FOREIGN KEY (`Id_Professor`) REFERENCES `professor` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_TurmaNota` FOREIGN KEY (`Id_Turma`) REFERENCES `turma_professor` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="professor">
+                CREATE TABLE `professor` (
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Usuario` smallint(6) DEFAULT NULL,
+                  KEY `fk_Id_Usuario` (`Id_Usuario`),
+                  KEY `fk_Id_Professor` (`Id_Professor`),
+                  CONSTRAINT `fk_Id_Professor` FOREIGN KEY (`Id_Professor`) REFERENCES `professor_cadastro` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_Usuario` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="professor_cadastro">
+                CREATE TABLE `professor_cadastro` (
+                  `Id_Professor` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Nome` varchar(40) DEFAULT NULL,
+                  `Disciplina` varchar(40) DEFAULT NULL,
+                  `CPF` varchar(20) NOT NULL,
+                  PRIMARY KEY (`Id_Professor`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="secretaria">
+                CREATE TABLE `secretaria` (
+                  `Id_Secretaria` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Login` varchar(20) DEFAULT NULL,
+                  `Senha` varchar(12) DEFAULT NULL,
+                  PRIMARY KEY (`Id_Secretaria`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="turma">
+                CREATE TABLE `turma` (
+                  `Id_Turma` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Serie` varchar(10) DEFAULT NULL,
+                  `Ano` varchar(5) DEFAULT NULL,
+                  `Periodo` varchar(20) DEFAULT NULL,
+                  PRIMARY KEY (`Id_Turma`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="turma_professor">
+                CREATE TABLE `turma_professor` (
+                  `Id_Professor` smallint(6) DEFAULT NULL,
+                  `Id_Turma` smallint(6) DEFAULT NULL,
+                  `Serie` varchar(10) DEFAULT NULL,
+                  KEY `fk_Id_ProfessorTurmaProfessor` (`Id_Professor`),
+                  KEY `fk_Id_TurmaProfessor` (`Id_Turma`),
+                  CONSTRAINT `fk_Id_ProfessorTurmaProfessor` FOREIGN KEY (`Id_Professor`) REFERENCES `professor_cadastro` (`Id_Professor`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `fk_Id_TurmaProfessor` FOREIGN KEY (`Id_Turma`) REFERENCES `turma` (`Id_Turma`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="usuario">
+                CREATE TABLE `usuario` (
+                  `Id_Usuario` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Login` varchar(20) NOT NULL,
+                  `Senha` varchar(12) NOT NULL,
+                  PRIMARY KEY (`Id_Usuario`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="usuario_aluno">
+                CREATE TABLE `usuario_aluno` (
+                  `Id_Usuario_Aluno` smallint(6) NOT NULL AUTO_INCREMENT,
+                  `Id_Aluno` smallint(6) DEFAULT NULL,
+                  `Login` varchar(20) NOT NULL,
+                  `Senha` varchar(12) NOT NULL,
+                  PRIMARY KEY (`Id_Usuario_Aluno`),
+                  KEY `fk_Id_Id_AlunoUsuarioAluno` (`Id_Aluno`),
+                  CONSTRAINT `fk_Id_Id_AlunoUsuarioAluno` FOREIGN KEY (`Id_Aluno`) REFERENCES `aluno` (`Id_Aluno`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Banco de dados: 'diario_digitalbeta2'
+    -->
+    <database name="diario_digitalbeta2">
+        <!-- Tabela aluno -->
+        <table name="aluno">
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">2112</column>
+            <column name="Nome">Shereck</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">32434</column>
+            <column name="Nome">Tia</column>
+            <column name="Data_Nascimento">2004-06-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">342432</column>
+            <column name="Nome">socatia</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">dsfsdf</column>
+            <column name="Nome">Naruto</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">jkhkh</column>
+            <column name="Nome">Goku</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">d21</column>
+            <column name="Nome">Sasuke</column>
+            <column name="Data_Nascimento">2003-03-01</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">2112</column>
+            <column name="Nome">Sakura</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">32434</column>
+            <column name="Nome">Jose</column>
+            <column name="Data_Nascimento">2004-06-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">342432</column>
+            <column name="Nome">Soraima</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">dsfsdf</column>
+            <column name="Nome">Mariana</column>
+            <column name="Data_Nascimento">2003-03-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">453</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">10000000-1</column>
+            <column name="Nome">Alberto</column>
+            <column name="Data_Nascimento">2004-01-01</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">454</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">20000000-2</column>
+            <column name="Nome">Ana</column>
+            <column name="Data_Nascimento">2004-02-02</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">455</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">30000000-3</column>
+            <column name="Nome">Bianca</column>
+            <column name="Data_Nascimento">2004-03-03</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">456</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">40000000-4</column>
+            <column name="Nome">Bruna</column>
+            <column name="Data_Nascimento">2004-04-04</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">457</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">50000000-5</column>
+            <column name="Nome">Carol</column>
+            <column name="Data_Nascimento">2004-05-05</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">458</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">60000000-6</column>
+            <column name="Nome">Cornlio</column>
+            <column name="Data_Nascimento">2004-06-06</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">459</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">70000000-7</column>
+            <column name="Nome">Dejair</column>
+            <column name="Data_Nascimento">2004-07-07</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">460</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">80000000-8</column>
+            <column name="Nome">Fbio</column>
+            <column name="Data_Nascimento">2004-08-08</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">461</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">90000000-9</column>
+            <column name="Nome">Goulart</column>
+            <column name="Data_Nascimento">2004-09-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">462</column>
+            <column name="Id_Turma">40</column>
+            <column name="RA">1100000-10</column>
+            <column name="Nome">Juscelino</column>
+            <column name="Data_Nascimento">2004-10-10</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">475</column>
+            <column name="Id_Turma">42</column>
+            <column name="RA">1329029330</column>
+            <column name="Nome">Fiona</column>
+            <column name="Data_Nascimento">2000-11-25</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">10000000-1</column>
+            <column name="Nome">Alberto</column>
+            <column name="Data_Nascimento">2004-01-01</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">20000000-2</column>
+            <column name="Nome">Ana</column>
+            <column name="Data_Nascimento">2004-02-02</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">30000000-3</column>
+            <column name="Nome">Bianca</column>
+            <column name="Data_Nascimento">2004-03-03</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">40000000-4</column>
+            <column name="Nome">Bruna</column>
+            <column name="Data_Nascimento">2004-04-04</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">50000000-5</column>
+            <column name="Nome">Carol</column>
+            <column name="Data_Nascimento">2004-05-05</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">60000000-6</column>
+            <column name="Nome">Cornélio</column>
+            <column name="Data_Nascimento">2004-06-06</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">70000000-7</column>
+            <column name="Nome">Dejair</column>
+            <column name="Data_Nascimento">2004-07-07</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">80000000-8</column>
+            <column name="Nome">Fábio</column>
+            <column name="Data_Nascimento">2004-08-08</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">90000000-9</column>
+            <column name="Nome">Goulart</column>
+            <column name="Data_Nascimento">2004-09-09</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">1100000-10</column>
+            <column name="Nome">Juscelino</column>
+            <column name="Data_Nascimento">2004-10-10</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">1100000-01</column>
+            <column name="Nome">Maria</column>
+            <column name="Data_Nascimento">2005-10-10</column>
+        </table>
+        <table name="aluno">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="RA">10009373</column>
+            <column name="Nome">Julio</column>
+            <column name="Data_Nascimento">2018-11-30</column>
+        </table>
+        <!-- Tabela avaliacao -->
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">76</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Titulo">Fisica Quantica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Fazer Calculos</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">77</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Fisica Quantica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Fazer Calculos</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">78</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">9</column>
+            <column name="Serie">5 Serie A</column>
+            <column name="Titulo">Fisica Boladona</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Fazer Calculos Bolado</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">79</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Titulo">Fisica Boladona</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Fazer Calculos Bolado</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">80</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Fisica Boladona</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Fazer Calculos Bolado</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">81</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Leis de Newton</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Leis de Newton</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">82</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">9</column>
+            <column name="Serie">5 Serie A</column>
+            <column name="Titulo">Leis de Newton</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Leis de Newton</column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">83</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">40</column>
+            <column name="Serie">agora</column>
+            <column name="Titulo">Atividade</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">84</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Titulo">Atividade</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">85</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Atividade</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Atividade</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">87</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">40</column>
+            <column name="Serie">agora</column>
+            <column name="Titulo">Caderno</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">88</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Titulo">Caderno</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">89</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Caderno</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Caderno</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-28</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">91</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">40</column>
+            <column name="Serie">agora</column>
+            <column name="Titulo">Trabalho Quimica Organica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-06</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">92</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Titulo">Trabalho Quimica Organica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-06</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">93</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Titulo">Trabalho Quimica Organica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-06</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Trabalho Quimica Organica</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao">Atividade em aula</column>
+            <column name="Data_Avaliacao">2018-11-06</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Prova Rosa dos Vento</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao"></column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Trabalho</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao"></column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <table name="avaliacao">
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Titulo">Prova Bimestral</column>
+            <column name="Bimestre">1º Bimestre</column>
+            <column name="Descricao"></column>
+            <column name="Data_Avaliacao">2018-11-30</column>
+        </table>
+        <!-- Tabela bimestre -->
+        <table name="bimestre">
+            <column name="Id_Bimestre">1</column>
+            <column name="Bimestre">1º Bimestre</column>
+        </table>
+        <table name="bimestre">
+            <column name="Id_Bimestre">2</column>
+            <column name="Bimestre">2º Bimestre</column>
+        </table>
+        <table name="bimestre">
+            <column name="Id_Bimestre">3</column>
+            <column name="Bimestre">3º Bimestre</column>
+        </table>
+        <table name="bimestre">
+            <column name="Id_Bimestre">4</column>
+            <column name="Bimestre">4º Bimestre</column>
+        </table>
+        <!-- Tabela chamada -->
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">439</column>
+            <column name="Numero_Chamada">1</column>
+            <column name="Nome">Goku</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">442</column>
+            <column name="Numero_Chamada">2</column>
+            <column name="Nome">Jose</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">444</column>
+            <column name="Numero_Chamada">3</column>
+            <column name="Nome">Mariana</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">438</column>
+            <column name="Numero_Chamada">4</column>
+            <column name="Nome">Naruto</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">441</column>
+            <column name="Numero_Chamada">5</column>
+            <column name="Nome">Sakura</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">440</column>
+            <column name="Numero_Chamada">6</column>
+            <column name="Nome">Sasuke</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">435</column>
+            <column name="Numero_Chamada">7</column>
+            <column name="Nome">Shereck</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">437</column>
+            <column name="Numero_Chamada">8</column>
+            <column name="Nome">socatia</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">443</column>
+            <column name="Numero_Chamada">9</column>
+            <column name="Nome">Soraima</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">42</column>
+            <column name="Id_Aluno">436</column>
+            <column name="Numero_Chamada">10</column>
+            <column name="Nome">Tia</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">486</column>
+            <column name="Numero_Chamada">1</column>
+            <column name="Nome">Alberto</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">487</column>
+            <column name="Numero_Chamada">2</column>
+            <column name="Nome">Ana</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">488</column>
+            <column name="Numero_Chamada">3</column>
+            <column name="Nome">Bianca</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">489</column>
+            <column name="Numero_Chamada">4</column>
+            <column name="Nome">Bruna</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">490</column>
+            <column name="Numero_Chamada">5</column>
+            <column name="Nome">Carol</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">491</column>
+            <column name="Numero_Chamada">6</column>
+            <column name="Nome">Cornélio</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">492</column>
+            <column name="Numero_Chamada">7</column>
+            <column name="Nome">Dejair</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">493</column>
+            <column name="Numero_Chamada">8</column>
+            <column name="Nome">Fábio</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">494</column>
+            <column name="Numero_Chamada">9</column>
+            <column name="Nome">Goulart</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">497</column>
+            <column name="Numero_Chamada">10</column>
+            <column name="Nome">Julio</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">495</column>
+            <column name="Numero_Chamada">11</column>
+            <column name="Nome">Juscelino</column>
+        </table>
+        <table name="chamada">
+            <column name="Id_Turma">47</column>
+            <column name="Id_Aluno">496</column>
+            <column name="Numero_Chamada">12</column>
+            <column name="Nome">Maria</column>
+        </table>
+        <!-- Tabela conteudo_programatico -->
+        <table name="conteudo_programatico">
+            <column name="Id_conteudoProgramatico">8</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Conteudo_Programatico"></column>
+            <column name="Data_Conteudo">2018-11-30</column>
+        </table>
+        <table name="conteudo_programatico">
+            <column name="Id_conteudoProgramatico">9</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Conteudo_Programatico"></column>
+            <column name="Data_Conteudo">2018-11-30</column>
+        </table>
+        <table name="conteudo_programatico">
+            <column name="Id_conteudoProgramatico">10</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Conteudo_Programatico"></column>
+            <column name="Data_Conteudo">2018-11-29</column>
+        </table>
+        <!-- Tabela frequencia -->
+        <table name="frequencia">
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-12-01</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-30</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">C</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <table name="frequencia">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta">F</column>
+            <column name="Data">2018-11-29</column>
+        </table>
+        <!-- Tabela media_final -->
+        <table name="media_final">
+            <column name="Id_Media">3</column>
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">4</column>
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">5</column>
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.40</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">6</column>
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">7</column>
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.80</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">8</column>
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">4.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">9</column>
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">10</column>
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">3.80</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">11</column>
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">12</column>
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">8.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">13</column>
+            <column name="Id_Aluno">439</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">14</column>
+            <column name="Id_Aluno">442</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">3.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">15</column>
+            <column name="Id_Aluno">444</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.80</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">16</column>
+            <column name="Id_Aluno">438</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.80</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">17</column>
+            <column name="Id_Aluno">441</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.40</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">18</column>
+            <column name="Id_Aluno">440</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">19</column>
+            <column name="Id_Aluno">435</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.20</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">20</column>
+            <column name="Id_Aluno">437</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">21</column>
+            <column name="Id_Aluno">443</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.40</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">22</column>
+            <column name="Id_Aluno">436</column>
+            <column name="Id_Turma">42</column>
+            <column name="Id_Professor">165</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">23</column>
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">24</column>
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.30</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">25</column>
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">4.50</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">26</column>
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.10</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">27</column>
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.40</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">28</column>
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.40</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">29</column>
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">1.80</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">30</column>
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.60</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">31</column>
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">8.90</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">32</column>
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">33</column>
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">8.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">34</column>
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">9.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">35</column>
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">3.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">36</column>
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">3.67</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">37</column>
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">5.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">38</column>
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">39</column>
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">40</column>
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">41</column>
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">6.33</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">42</column>
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.33</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">43</column>
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">44</column>
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">8.33</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">45</column>
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">1.00</column>
+        </table>
+        <table name="media_final">
+            <column name="Id_Media">46</column>
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Falta_Total">0</column>
+            <column name="Media">7.00</column>
+        </table>
+        <!-- Tabela nota -->
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">4.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">86</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">1.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">90</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">2.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">10.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">1.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">10.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">2.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">166</column>
+            <column name="Id_Avaliacao">94</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">2.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">3.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">4.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">1.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">95</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">2.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">3.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">4.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">1.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">96</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">486</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">487</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">488</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">489</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">8.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">490</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">9.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">491</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">4.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">492</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">5.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">493</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">6.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">494</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">497</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">495</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">1.00</column>
+        </table>
+        <table name="nota">
+            <column name="Id_Aluno">496</column>
+            <column name="Id_Turma">47</column>
+            <column name="Id_Professor">112</column>
+            <column name="Id_Avaliacao">97</column>
+            <column name="Id_Bimestre">1</column>
+            <column name="Nota">7.00</column>
+        </table>
+        <!-- Tabela professor -->
+        <table name="professor">
+            <column name="Id_Professor">112</column>
+            <column name="Id_Usuario">19</column>
+        </table>
+        <table name="professor">
+            <column name="Id_Professor">113</column>
+            <column name="Id_Usuario">20</column>
+        </table>
+        <table name="professor">
+            <column name="Id_Professor">114</column>
+            <column name="Id_Usuario">21</column>
+        </table>
+        <table name="professor">
+            <column name="Id_Professor">114</column>
+            <column name="Id_Usuario">22</column>
+        </table>
+        <table name="professor">
+            <column name="Id_Professor">165</column>
+            <column name="Id_Usuario">27</column>
+        </table>
+        <table name="professor">
+            <column name="Id_Professor">166</column>
+            <column name="Id_Usuario">28</column>
+        </table>
+        <!-- Tabela professor_cadastro -->
+        <table name="professor_cadastro">
+            <column name="Id_Professor">112</column>
+            <column name="Nome">Paulo</column>
+            <column name="Disciplina">Geografia</column>
+            <column name="CPF">986</column>
+        </table>
+        <table name="professor_cadastro">
+            <column name="Id_Professor">113</column>
+            <column name="Nome">Francisco</column>
+            <column name="Disciplina">Elétrica</column>
+            <column name="CPF">1223</column>
+        </table>
+        <table name="professor_cadastro">
+            <column name="Id_Professor">114</column>
+            <column name="Nome">Daniela</column>
+            <column name="Disciplina">Física</column>
+            <column name="CPF">898</column>
+        </table>
+        <table name="professor_cadastro">
+            <column name="Id_Professor">115</column>
+            <column name="Nome">Meire</column>
+            <column name="Disciplina">Português</column>
+            <column name="CPF">615</column>
+        </table>
+        <table name="professor_cadastro">
+            <column name="Id_Professor">165</column>
+            <column name="Nome">Riberto</column>
+            <column name="Disciplina">Fisica</column>
+            <column name="CPF">363636</column>
+        </table>
+        <table name="professor_cadastro">
+            <column name="Id_Professor">166</column>
+            <column name="Nome">Holinda</column>
+            <column name="Disciplina">quimica</column>
+            <column name="CPF">12121313</column>
+        </table>
+        <!-- Tabela secretaria -->
+        <table name="secretaria">
+            <column name="Id_Secretaria">1</column>
+            <column name="Login">admin</column>
+            <column name="Senha">admin</column>
+        </table>
+        <table name="secretaria">
+            <column name="Id_Secretaria">2</column>
+            <column name="Login">teste</column>
+            <column name="Senha">teste</column>
+        </table>
+        <!-- Tabela turma -->
+        <table name="turma">
+            <column name="Id_Turma">40</column>
+            <column name="Serie">agora</column>
+            <column name="Ano">2000</column>
+            <column name="Periodo">agora</column>
+        </table>
+        <table name="turma">
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+            <column name="Ano">2000</column>
+            <column name="Periodo">nunca</column>
+        </table>
+        <table name="turma">
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+            <column name="Ano">2000</column>
+            <column name="Periodo">Manha</column>
+        </table>
+        <table name="turma">
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+            <column name="Ano">2018</column>
+            <column name="Periodo">Manha</column>
+        </table>
+        <!-- Tabela turma_professor -->
+        <table name="turma_professor">
+            <column name="Id_Professor">112</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">113</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">114</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">115</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">165</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">165</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">166</column>
+            <column name="Id_Turma">40</column>
+            <column name="Serie">agora</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">166</column>
+            <column name="Id_Turma">41</column>
+            <column name="Serie">Serie A</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">166</column>
+            <column name="Id_Turma">42</column>
+            <column name="Serie">7 Serie</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">166</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">112</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+        </table>
+        <table name="turma_professor">
+            <column name="Id_Professor">113</column>
+            <column name="Id_Turma">47</column>
+            <column name="Serie">3 Ano A</column>
+        </table>
+        <!-- Tabela usuario -->
+        <table name="usuario">
+            <column name="Id_Usuario">19</column>
+            <column name="Login">PaulãoGeo</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario">
+            <column name="Id_Usuario">20</column>
+            <column name="Login">ChicãoEletricero</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario">
+            <column name="Id_Usuario">21</column>
+            <column name="Login">DanielaFisica</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario">
+            <column name="Id_Usuario">22</column>
+            <column name="Login">Meire@meire</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario">
+            <column name="Id_Usuario">27</column>
+            <column name="Login">RibertoFisica</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario">
+            <column name="Id_Usuario">28</column>
+            <column name="Login">Holindassa</column>
+            <column name="Senha">123</column>
+        </table>
+        <!-- Tabela usuario_aluno -->
+        <table name="usuario_aluno">
+            <column name="Id_Usuario_Aluno">1</column>
+            <column name="Id_Aluno">439</column>
+            <column name="Login">Gokuzika</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario_aluno">
+            <column name="Id_Usuario_Aluno">2</column>
+            <column name="Id_Aluno">487</column>
+            <column name="Login">Ana2</column>
+            <column name="Senha">123</column>
+        </table>
+        <table name="usuario_aluno">
+            <column name="Id_Usuario_Aluno">3</column>
+            <column name="Id_Aluno">496</column>
+            <column name="Login">MariaJ</column>
+            <column name="Senha">123</column>
+        </table>
+    </database>
+</pma_xml_export>
