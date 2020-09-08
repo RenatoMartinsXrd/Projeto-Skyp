@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.testchamada">
+    <ContentPage.Content>
+       <StackLayout>
+        <!-- Place new controls here -->
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Picker x:Name="Picker" Title="Professor"
+                     
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+            <ScrollView>
+                <ListView x:Name="listView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                    <StackLayout Orientation="Horizontal"  Margin="10">
+
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Numero_Chamada}" TextColor="Black"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="End" >
+                                            <Label Text="{Binding Nome}"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                                            <Entry ></Entry>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+
+                </ListView>
+            </ScrollView>
+
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Button Text="Salvar" Clicked="Buscar" ></Button>
+
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

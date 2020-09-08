@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.ListarAvaliacoes">
+    <ContentPage.Content>
+
+
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#4ED188">
+                        <Label Text="Listar Avaliações" TextColor="White" FontAttributes="Bold" FontSize="Medium"></Label>
+                        <Picker x:Name="Picker2" HorizontalOptions="FillAndExpand" Title="Selecione o Bimestre:"  SelectedIndexChanged="Picker2_OnSelectedIndexChanged" >
+                            <Picker.Items>
+                            <x:String>1º Bimestre</x:String>
+                            <x:String>2º Bimestre</x:String>
+                            <x:String>3º Bimestre</x:String>
+                            <x:String>4º Bimestre
+                            </x:String>
+                            </Picker.Items>
+
+                        </Picker>
+
+                        <Picker x:Name="Picker" Title="Serie"
+                     
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+
+                        </Picker>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <Button Text="Listar" Clicked="Listar"></Button>
+
+                    </StackLayout>
+            
+       
+
+                <ListView x:Name="listView" ItemSelected="listViewSelected" HasUnevenRows="True"  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <StackLayout  Margin="10"   >
+                                <Grid BackgroundColor="#13CE66"  RowSpacing="1" Margin="20"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+
+         
+
+            <StackLayout Orientation="Vertical">
+
+                        <Label Text= "Informações das Avaliações" HorizontalOptions="Center"  Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="16"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text= "Nome da Avaliação  -" HorizontalOptions="Start"  Grid.Column="0" TextColor="White" FontAttributes="Bold" FontSize="14"></Label>
+                            <Label Text= "{Binding Titulo}" HorizontalOptions="Start"  Grid.Column="0" TextColor="#3B4859" FontAttributes="Bold" FontSize="15"></Label>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text= "Data da Avaliação -" HorizontalOptions="Start"  Grid.Column="0" TextColor="White" FontAttributes="Bold" FontSize="14"></Label>
+                            <Label Text= "{Binding Data_Avaliacao, StringFormat='{0: dd/MM/yyyy}'}" HorizontalOptions="Start"  Grid.Column="0" TextColor="#3B4859" FontAttributes="Bold" FontSize="15"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button Text="Atribuir Notas" HorizontalOptions="CenterAndExpand" BackgroundColor="#3B4859"  Grid.Column="0" Grid.Row="1" TextColor="White" Clicked="Button_Clicked"></Button>
+                </Grid>
+
+
+            </StackLayout>
+       
+        </ViewCell>
+            </DataTemplate>
+            </ListView.ItemTemplate>
+
+         
+            </ListView>
+
+      
+     
+        </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

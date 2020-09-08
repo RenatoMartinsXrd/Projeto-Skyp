@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Skyp.InserirTurma">
+    <ContentPage.Content>
+        <StackLayout Margin="15" BackgroundColor="#3CC74A" >
+
+            <Label Text="CADASTRO DE TURMAS" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End" ></Label>
+            <StackLayout Margin="15" VerticalOptions="CenterAndExpand">
+
+                    <Label Text="SÉRIE"></Label>
+                    <Entry x:Name="serie"></Entry>
+
+                <Picker x:Name="Picker" HorizontalOptions="FillAndExpand" Title="Período"
+                 
+            
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+                </Picker>
+
+                <Label Text="ANO"></Label>
+                    <Entry x:Name="ano"></Entry>
+
+                    <Button Text="SALVAR" BorderRadius="15" TextColor="White" BackgroundColor="Black" FontAttributes="Bold" x:Name="salvar" Clicked="btnSalvar"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

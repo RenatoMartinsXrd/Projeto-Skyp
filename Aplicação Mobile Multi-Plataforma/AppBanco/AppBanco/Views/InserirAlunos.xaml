@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.InserirAlunos">
+    <ContentPage.Content>
+        <ScrollView >
+        <StackLayout   BackgroundColor="#4ED188">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label TextColor="#343F4B" Text="Nome completo do Aluno"></Label>
+                <Entry x:Name="nomeAluno" WidthRequest="20"></Entry>
+
+                <Label TextColor="#343F4B" Text="R.A do Aluno"></Label>
+                <Entry x:Name="raAluno"></Entry>
+
+
+                <Label TextColor="#343F4B" Text="Selecione Sua Data de Nascimento"></Label>
+                <DatePicker x:Name="dataAluno" HorizontalOptions="StartAndExpand"></DatePicker>
+
+                <Picker x:Name="Picker" Title="Serie"
+                     
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+
+                </Picker>
+                <Button x:Name="salvarAluno" TextColor="White" BorderRadius="15" Text="Salvar" BackgroundColor="#3B4859" Clicked="Salvar"></Button>
+                <Button Text="Consultar Serie" VerticalOptions="StartAndExpand" Clicked="Consultar"></Button>
+            </StackLayout>
+         
+                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+
+                
+
+                    <ListView x:Name="listView" ItemSelected="listViewSelected" ItemTapped="listView_ItemTapped"   >
+
+
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <ViewCell>
+
+                                    <Grid Margin="2"   >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+
+                                        </Grid.ColumnDefinitions>
+
+
+
+
+
+                                        <Label Text="{Binding Nome}" Grid.Column="0" Grid.Row="0"  Margin="0" HorizontalOptions="CenterAndExpand" TextColor="Black"></Label>
+                                        
+                                    </Grid>
+
+
+
+
+
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+            
+            </StackLayout>
+
+            
+               
+
+
+
+
+              
+          
+          
+            
+                    
+                
+          
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

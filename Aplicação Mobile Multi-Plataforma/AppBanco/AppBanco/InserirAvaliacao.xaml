@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.InserirAvaliacao">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#4ED188">
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="20">
+                <Picker x:Name="Picker" HorizontalOptions="FillAndExpand" Title="Selecione o Bimestre:"  SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+                    <Picker.Items>
+                            <x:String>1º Bimestre</x:String>
+                            <x:String>2º Bimestre</x:String>
+                            <x:String>3º Bimestre</x:String>
+                            <x:String>4º Bimestre
+                            </x:String>
+                        </Picker.Items>
+                    
+                </Picker>
+                    <DatePicker x:Name="dataAvaliacao" HorizontalOptions="StartAndExpand"></DatePicker>
+                </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="20">
+                     
+                <Label Text="Titulo" ></Label>
+                    <Editor MinimumHeightRequest="100" x:Name="labelTitulo" ></Editor>
+                <!--<EntryCell Label="Titulo de Avaliação"></EntryCell>-->
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="20">
+
+                    <Label Text="Descrição" ></Label>
+                    <Editor MinimumHeightRequest="100" HeightRequest="100" x:Name="labelDescricao"></Editor>
+             
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Margin="20">
+                <Label Text="Turmas"></Label>
+                <ListView x:Name="listView" ItemSelected="listViewSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal"  Margin="10">
+
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Serie}"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="End" >
+                                            <Switch IsToggled="{Binding IsChecked}" x:Name="check"></Switch>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+           
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Button Text="Salvar" Clicked="Salvar"></Button>
+
+            </StackLayout>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.InserirNotas">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#4ED188">
+            <!-- Place new controls here -->
+
+
+            <StackLayout Margin="20">
+
+
+                    <ListView ItemSelected="listViewSelected" x:Name="listView" Header="{Binding}"  >
+
+                        <ListView.HeaderTemplate>
+                            <DataTemplate>
+
+
+
+                                <Grid   >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Label Text="Numero de Chamada"  Grid.Column="0" Grid.Row="0" HorizontalOptions="StartAndExpand" ></Label>
+                                    <Label Text="Nome"  Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand"  ></Label>
+                                </Grid>
+
+                            </DataTemplate>
+                        </ListView.HeaderTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout  Margin="10"   >
+                                        <Grid   >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="{Binding Numero_Chamada}" Grid.Column="0" Grid.Row="0" HorizontalOptions="StartAndExpand"></Label>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Nome}" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand"></Label>
+
+                                            </StackLayout>
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Entry Placeholder="Nota" Grid.Column="1" Grid.Row="0" HorizontalOptions="EndAndExpand" Keyboard="Numeric" Completed="updateItem" Text="{Binding nota}}" ></Entry>
+                                      
+                                                </StackLayout>
+
+
+
+
+
+
+
+                                            </Grid>
+                                        </StackLayout>
+
+
+
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+
+           
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Button Text="Salvar" Clicked="Button_Clicked" ></Button>
+
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.SelecionarPerfil">
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="#4ED188"  >
+        
+            <Label Text="SELECIONE O SEU PERFIL" HorizontalOptions="Center" TextColor="#47525E" FontSize="Large" ></Label>
+
+       
+
+
+
+
+
+                <Grid VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Imagem, selecionar perfil professor-->
+         
+                    <Image BackgroundColor="#3B4859" Margin="20"  Aspect="AspectFit" x:Name="imagemPerfilProfessor" Grid.Column="0" Grid.Row="0" >
+                           <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="professorTapped"/>
+                            </Image.GestureRecognizers>                    
+                        </Image>
+             
+
+
+              
+                    <!--Imagem, selecionar perfil secretaria-->
+                <Image BackgroundColor="#969FAA" Margin="20" Aspect="AspectFit" x:Name="imagemPerfilSecretaria" Grid.Column="1" Grid.Row="0" >
+                            <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="secretariaTapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                <!--Imagem, selecionar perfil Aluno-->
+                <Image BackgroundColor="#969FAA" Margin="20" Aspect="AspectFit" x:Name="imagemPerfilAluno" Grid.Row="1" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="alunoTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+            </Grid>
+         
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

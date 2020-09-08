@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.ConsultaTurma">
+    <ContentPage.Content>
+        <StackLayout >
+            <!-- Place new controls here -->
+
+            <StackLayout >
+               
+                    <ListView x:Name="listView" ItemSelected="listViewSelected" HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout  Margin="10" BackgroundColor="#B8977E"  >
+                                        <Grid BackgroundColor="#13CE66"  RowSpacing="1" Margin="20"  >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+
+                                            </Grid.ColumnDefinitions>
+
+
+                                            <Label Text="{Binding Serie}" HorizontalOptions="CenterAndExpand"  Grid.Column="0" Grid.Row="0" TextColor="White"></Label>
+                                            <Button Text="Abrir" HorizontalOptions="CenterAndExpand" BackgroundColor="#3B4859"  Grid.Column="0" Grid.Row="1" TextColor="White"></Button>
+                                        </Grid>
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+       
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

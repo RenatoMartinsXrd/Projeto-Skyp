@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppBanco"
+             x:Class="AppBanco.TelaLogin">
+    
+    <!--StackLayout do plano de fundo, com a cor verde-->
+    <StackLayout BackgroundColor="#3CC74A">      
+                        
+            <!--StackLayout para os campos do Login-->
+            <StackLayout Margin="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#D7DCE3" WidthRequest="600" HeightRequest="300">
+            <StackLayout BackgroundColor="#D7DCE3">
+                <Label Text="Secretaria" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" ></Label>
+
+                <!--Logotipo do Skyp-->
+             
+
+                <!--Usuário e Senha para Login-->
+                <Entry Placeholder="Usuário" VerticalOptions="Center" x:Name="usuario"></Entry>
+            <Entry Placeholder="Senha" IsPassword="True" x:Name="Senha"></Entry>
+
+
+                <!--Botão para logar-->
+                <Button Text="LOGAR" FontAttributes="Bold" Clicked="btnEntrar" BackgroundColor="Black" BorderRadius="10" TextColor="White"></Button>
+
+                <!--Botão: problemas de conexão-->
+                <Button Text="Problemas para conexão?" FontAttributes="Bold"  BackgroundColor="Black" BorderRadius="10" TextColor="White"></Button>
+                
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

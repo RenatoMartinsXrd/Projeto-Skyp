@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppBanco"
+             x:Class="AppBanco.IncluirTurmasProf">
+
+    <StackLayout BackgroundColor="AliceBlue">
+        <!-- Place new controls here -->
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Picker x:Name="Picker" Title="Professor"
+                     
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+            <ScrollView>
+                <ListView x:Name="listView" ItemSelected="listViewSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"  Margin="10">
+
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Serie}"></Label>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="End" >
+                                        <Switch IsToggled="{Binding IsChecked}" x:Name="check" ></Switch>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+
+                </ListView>
+            </ScrollView>
+
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Button Text="Salvar" Clicked="Salvar"></Button>
+
+        </StackLayout>
+    </StackLayout>
+
+
+
+
+</ContentPage>

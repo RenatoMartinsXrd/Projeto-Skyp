@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.InserirChamada">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor= "#13CE66">
+            <!-- Place new controls here -->
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <Picker x:Name="Picker" Title="Turma"
+                     
+                SelectedIndexChanged="Picker_OnSelectedIndexChanged" >
+
+                </Picker>
+                <Button Text="Buscar" Clicked="Buscar" ></Button>
+            </StackLayout>
+
+                <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand">
+               
+             
+                    <ListView ItemSelected="listViewSelected" x:Name="listView" Header="{Binding}" HasUnevenRows="True" >
+                     
+                        <ListView.HeaderTemplate>
+                        <DataTemplate>
+
+
+
+                                <Grid   >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Label Text="Numero de Chamada"  Grid.Column="0" Grid.Row="0" HorizontalOptions="StartAndExpand" ></Label>
+                                    <Label Text="Nome"  Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand"  ></Label>
+                                         </Grid>
+
+                        </DataTemplate>
+                            </ListView.HeaderTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                        <Grid  RowSpacing="1" Margin="20"   >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                              
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+
+
+                                            <Label Text="{Binding Numero_Chamada}" Grid.Column="0" Grid.Row="0" HorizontalOptions="StartAndExpand"></Label>
+                                           
+                                              
+                                                    <Label Text="{Binding Nome}" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand"></Label>
+                                         
+
+
+
+
+
+
+
+
+
+                                        </Grid>
+
+
+
+
+                                    </ViewCell.View>
+                                </ViewCell>
+                                    </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+              
+       
+
+            </StackLayout>
+                
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Button Text="Salvar" Clicked="Button_Clicked"></Button>
+
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

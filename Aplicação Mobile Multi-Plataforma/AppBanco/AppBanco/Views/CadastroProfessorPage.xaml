@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Skyp.CadastroProfessorPage">
+    <ContentPage.Content>
+
+        <StackLayout  Margin="15"  BackgroundColor="#13CE66">
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+            
+                <StackLayout Margin="15" VerticalOptions="CenterAndExpand">
+
+
+                    <Label Text="Nome" TextColor="#343F4B"></Label>
+                            <Entry x:Name="nomeProfessor"></Entry>
+
+                    <Label Text="Disciplina" TextColor="#343F4B"></Label>
+                            <Entry x:Name="disciplina"></Entry>
+
+                    <Label Text="CPF" TextColor="#343F4B"></Label>
+                            <Entry x:Name="cpfProfessor"></Entry>
+
+                            <Label Text="DATA DE NASCIMENTO" TextColor="#343F4B"></Label>
+                            <DatePicker x:Name="dataNascimento" HorizontalOptions="Start"></DatePicker>
+
+                        <Button Text="SALVAR" x:Name="salvarNomeProfessor" TextColor="White" BackgroundColor="#3B4859" BorderRadius="15" Clicked="Salvar"></Button>
+                 </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
