@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.ConsultarAvaliacaoes">
+    <ContentPage.Content>
+     
+        <!-- Place new controls here -->
+
+        <StackLayout >
+
+            <ListView x:Name="listView" ItemSelected="listViewSelected" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout  Margin="10" BackgroundColor="#B8977E"  >
+                                <Grid BackgroundColor="#13CE66"  RowSpacing="1" Margin="20"  >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+
+                                    </Grid.ColumnDefinitions>
+
+
+
+
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text= "Informações do Aluno" HorizontalOptions="Center"  Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="16"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text= "Disciplina  -" HorizontalOptions="Start"  Grid.Column="0" TextColor="White" FontAttributes="Bold" FontSize="14"></Label>
+                                            <Label Text= "{Binding Disciplina}" HorizontalOptions="Start"  Grid.Column="0" TextColor="#3B4859" FontAttributes="Bold" FontSize="15"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text= "Media -" HorizontalOptions="Start"  Grid.Column="0" TextColor="White" FontAttributes="Bold" FontSize="14"></Label>
+                                            <Label Text= "{Binding Media}" HorizontalOptions="Start"  Grid.Column="0" TextColor="#3B4859" FontAttributes="Bold" FontSize="15"></Label>
+                                        </StackLayout>
+                                        
+                                    </StackLayout>
+                                  
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+
+
+        </StackLayout>
+
+     
+    </ContentPage.Content>
+</ContentPage>

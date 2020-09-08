@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppBanco"
+             x:Class="AppBanco.MainPage">
+
+    <StackLayout>
+        <Button Text="Tarefas" Clicked="btTarefas"></Button>
+        <Button Text="teste" Clicked="btteste">
+            </Button>
+    </StackLayout>
+
+</ContentPage>

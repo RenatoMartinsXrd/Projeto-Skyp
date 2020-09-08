@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBanco.Views.NovoLoginAluno">
+    <ContentPage.Content>
+
+        <StackLayout    BackgroundColor="#13CE66">
+
+            <StackLayout Margin="15"  VerticalOptions="CenterAndExpand">
+
+                <Label Text="Cadastro Login Aluno" HorizontalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" FontSize="Large" ></Label>
+
+                <StackLayout Margin="15" VerticalOptions="CenterAndExpand">
+
+
+                 
+                    <Label Text="RA" TextColor="#343F4B"></Label>
+                    <Entry x:Name="RaAlunor"></Entry>
+
+                    <Label Text="LOGIN" TextColor="#343F4B"></Label>
+                    <Entry x:Name="loginAlunor"></Entry>
+
+
+                    <Label Text="SENHA" TextColor="#343F4B"></Label>
+                    <Entry x:Name="senhaAluno"  IsPassword="True"></Entry>
+
+                    <Label Text=" CONFIRMA SENHA" TextColor="#343F4B"></Label>
+                    <Entry x:Name="confirmaSenhaAluno"  IsPassword="True"></Entry>
+
+                 
+
+                    <Button Text="SALVAR"  TextColor="White" BackgroundColor="#3B4859" BorderRadius="15" Clicked="salvarCadastroProfessor_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
