@@ -16,7 +16,7 @@ Basicamente todas as telas são planilhas editáveis que permitem importação d
 
 # Um pouco da metodologia e alguns esboços do desenvolvimento
 
-![](Prints/Bd/Imagem_ModeloConceitualBMP.BMP)
+![](Prints/Bd/Imagem_ModeloConceitualJPG.JPG)
 
 # Um pouco sobre como foi o desenvolvimento
 Quando fiz esse projeto eu tinha pouca experiência em desenvolvimento de software, não tinha nem mesmo conhecimento em estrutura de dados, orientação a objetos ou algum padrão de desenvolvimento de software, mas acredito que consegui cumprir o desafio, meus maiores conhecimentos era banco de dados o que acabou facilitando um pouco na construção do projeto.
