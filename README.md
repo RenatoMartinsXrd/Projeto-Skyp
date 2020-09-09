@@ -5,9 +5,9 @@ O projeto Skyp tem o intuito de ser um diario escolar digital com a proposta de 
  ![](Prints/Print-Desktop-4.JPG)
  ![](Prints/Print-Desktop-5.JPG)
  
- ![](Prints/Mobile/menu chamada.PNG)
- ![](Prints/Mobile/fazendo chamada.PNG)
- ![](Prints/Mobile/menu notas.PNG)
+ ![](Prints/Mobile/menu%20chamada.PNG)
+ ![](Prints/Mobile/fazendo%20chamada.PNG)
+ ![](Prints/Mobile/menu%20notas.PNG)
  ![](Prints/Mobile/add%20notas.PNG)
  
 
